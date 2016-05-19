@@ -1,16 +1,15 @@
 <?php
-include_once 'session.php';
+session_start();
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html
     <head>
-        <meta charset="utf-8" />
-        <title>Spot Light - Blog</title>
+        <meta charset= "utf-8"/>
+        <title>NewOdesk</title>>
     </head>
-    <body id="subpage">
-        <div id="tooplate_wrapper">
-            <div id="tooplate_header_sp">
-                <div id="tooplate_menu">
+    <body id="">
+        <div id="">
+            <div id="">
+                <div id="">
                     <ul>
                         <li><a href="index.php"><span></span>Domov</a></li>
                         <li><a href="countries.php"><span></span>Države</a></li>
@@ -31,6 +30,8 @@ include_once 'session.php';
                         }
                         ?>
                     </ul>    	
+                </div>
+            </div>
             <?php
             if (isset($_SESSION['error'])) {
                 echo '<div class="error">' . $_SESSION['error'] . '</div>';
