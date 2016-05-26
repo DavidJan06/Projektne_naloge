@@ -24,7 +24,6 @@
                 else {
                     echo '<option value="'.$row['id_u'].'">'.$row['title'].'</option>';
                 }
-                
             }
         ?>
     </select><br />

@@ -1,13 +1,12 @@
 <?php
 
-include_once 'database.php';
-include_once 'session.php';
+include_once 'odesk_baza.php';
+session_start();
 
-$user_id = $_SESSION['id_u'];
-
+$id_u = $_SESSION['id_u'];
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$country_id = $_POST['id_c'];
+$id_c = $_POST['id_c'];
 
 $target_dir = "slike/";
 $random = date('Ymdhis').rand(1,1000);
@@ -62,28 +61,26 @@ if ($uploadOk == 0) {
 //če je $uploadOk = 1 je bila naložena slika
 if ($uploadOk) {
     //pomeni uporabnik je naložil sliko
-    $query = sprintf("UPDATE users SET first_name='%s',
-                                           last_name='%s',
-                                           country_id=$country_id,
-                                           avatar='%s'
-                           WHERE id=$user_id",
-                    mysqli_real_escape_string($link, $first_name),
-                    mysqli_real_escape_string($link, $last_name),
-                    mysqli_real_escape_string($link, $target_file));
+    $query = 'UPDATE users SET first_name="'.$first_name.'",
+                                           last_name="'.$last_name.'",
+                                           id_c='.$id_c.',
+                                           avatar="'.$target_file.'",
+                           WHERE id_i='.$id_u;
+
         //pošljemo nove podatke v bazo
      mysqli_query($link, $query);
 }
 else {
-    $query = sprintf("UPDATE users SET first_name='%s',
-                                           last_name='%s',
-                                           country_id=$country_id
-                           WHERE id=$user_id",
-                    mysqli_real_escape_string($link, $first_name),
-                    mysqli_real_escape_string($link, $last_name));
+    $query = 'UPDATE users SET first_name="'.$first_name.'",
+                                           last_name="'.$last_name.'",
+                                           id_c='.$id_c.'
+                           WHERE id_u='.$id_u;
+
         //pošljemo nove podatke v bazo
         mysqli_query($link, $query);
 }
 
 //preusmeritev nazaj na profile stran!
+echo $target_file;
 //header("Location: profile.php");
 ?>
