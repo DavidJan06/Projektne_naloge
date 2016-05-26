@@ -11,13 +11,13 @@ session_start();
             <div id="">
                 <div id="">
                     <ul>
-                        <?php if (!isset($_SESSION['user_id'])) {
+                        <?php if (!isset($_SESSION['id_u'])) {
                              ?>
                             <li><a href="user_add.php"><span></span>Registracija</a></li>
                             <li><a href="login.php"><span></span>Prijava</a></li>
                         <?php
                         } 
-                        else if (isset($_SESSION['user_id'])){?>
+                        else if (isset($_SESSION['id_u'])){?>
                         <li><a href="index.php"><span></span>Domov</a></li>
                         <li><a href="countries.php"><span></span>Države</a></li>
                         <li><a href="skills.php"><span></span>Veščine</a></li>
