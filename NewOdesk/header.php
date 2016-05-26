@@ -5,6 +5,7 @@ session_start();
     <head>
         <meta charset= "utf-8"/>
         <title>NewOdesk</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body id="">
         <div id="">
