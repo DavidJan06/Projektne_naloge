@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html
     <head>
         <meta charset= "utf-8"/>
-        <title>NewOdesk</title>>
+        <title>NewOdesk</title>
     </head>
     <body id="">
         <div id="">
@@ -32,6 +32,7 @@ session_start();
                     </ul>    	
                 </div>
             </div>
+
             <?php
             if (isset($_SESSION['error'])) {
                 echo '<div class="error">' . $_SESSION['error'] . '</div>';

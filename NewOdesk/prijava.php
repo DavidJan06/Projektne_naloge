@@ -1,5 +1,5 @@
 <?php
-    include_once 'glava.php';
+    include_once 'header.php';
 ?>
 
 <h1>Prijava</h1>
@@ -12,5 +12,5 @@
 </form>
 
 <?php
-    include_once 'noga.php';
+    include_once 'footer.php';
 ?>
