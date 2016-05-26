@@ -53,7 +53,7 @@
 <form action="skills_profile_update.php" method="POST">    
     <?php 
         //zapomnim si trenute veščine, ki jih ima
-        $query = "SELECT * FROM skills_users";
+        $query = "SELECT * FROM skills_users WHERE id_u =".$id_u;
         $result = mysqli_query($link, $query);
         //naredim prazno tabelo
         $skills = array();
@@ -64,13 +64,13 @@
         $query = "SELECT * FROM skills";
         $result = mysqli_query($link, $query);
         while ($row = mysqli_fetch_array($result)) {
-            if (in_array($row['id_u'], $skills)) {
+            if (in_array($row['id_s'], $skills)) {
                 echo '<input type="checkbox" 
-                        name=skills[] value="'.$row['id_u'].'" checked="checked" />'.$row['title'];
+                        name=skills[] value="'.$row['id_s'].'" checked="checked" />'.$row['title'];
             }
             else {
                 echo '<input type="checkbox" 
-                        name=skills[] value="'.$row['id_u'].'" />'.$row['title'];
+                        name=skills[] value="'.$row['id_s'].'" />'.$row['title'];
             }
             echo '<br />';
         }
@@ -78,13 +78,6 @@
     ?>
     <input type="submit" value="Posodobi" />
 </form>
-    <h2>Dokumenti</h2>
-    <form action="document_insert.php" method="POST" enctype="multipart/form-data">
-        Naslov: <input type="text" name="title" /><br />
-        Opis: <textarea name="description" cols="15" rows="5"></textarea><br />
-        Datoteka: <input type="file" name="fileToUpload" /><br />
-        <input type="submit" name="submit" value="Naloži" />
-    </form>
 </div>
 <?php
 include_once 'footer.php';
