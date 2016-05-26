@@ -17,7 +17,7 @@ session_start();
                             <li><a href="login.php"><span></span>Prijava</a></li>
                         <?php
                         } 
-                        else{?>
+                        else if (isset($_SESSION['user_id'])){?>
                         <li><a href="index.php"><span></span>Domov</a></li>
                         <li><a href="countries.php"><span></span>Države</a></li>
                         <li><a href="skills.php"><span></span>Veščine</a></li>

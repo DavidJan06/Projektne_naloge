@@ -3,7 +3,7 @@ include_once 'header.php';
 include_once 'odesk_baza.php';
 ?>
 
-<form action="registracija_preveri.php" method="POST" onsubmit="return validateForm()">
+<form action="user_insert.php" method="POST" onsubmit="return validateForm()">
     <label id="first_name">Ime</label>
     <input type="text" name="first_name" required="required" /><br />
     <label id="last_name">Priimek</label>

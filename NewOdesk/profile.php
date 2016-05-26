@@ -1,11 +1,11 @@
 <?php
     include_once 'header.php';
-    include_once 'database.php';
+    include_once 'odesk_baza.php';
     
     //shrani si id trenutno prijavljenega uporabnika
     $id_u = $_SESSION['id_u'];
     
-    $query = "SELECT * FROM users WHERE id_u =$id_u";
+    $query = "SELECT * FROM users WHERE id_u =".$id_u;
     $result = mysqli_query($link, $query);
     $user = mysqli_fetch_array($result);
 ?>
@@ -53,7 +53,7 @@
 <form action="skills_profile_update.php" method="POST">    
     <?php 
         //zapomnim si trenute veščine, ki jih ima
-        $query = "SELECT * FROM skills_users WHERE id_su=$id_su";
+        $query = "SELECT * FROM skills_users";
         $result = mysqli_query($link, $query);
         //naredim prazno tabelo
         $skills = array();

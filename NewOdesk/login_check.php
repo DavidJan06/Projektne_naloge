@@ -28,7 +28,7 @@
         $_SESSION['last_name'] = $user['last_name'];
         
         //vse je ok, preusmeritev na index
-        header("Location: stran.php");
+        header("Location: profile.php");
         die();
     }
     else {
