@@ -25,6 +25,11 @@ if (isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
+// Check if file already exists
+/*if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}*/
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
     //echo "Sorry, your file is too large.";
@@ -63,11 +68,7 @@ if ($uploadOk) {
                            WHERE id_u='.$id_u;
 
         //pošljemo nove podatke v bazo
-     $que=mysqli_query($link, $query);
-     //echo "ok";
-     if(!$que){
-            echo "not ok2";
-        }
+     mysqli_query($link, $query);
 }
 else {
     $query = 'UPDATE users SET first_name="'.$first_name.'",
@@ -76,14 +77,10 @@ else {
                            WHERE id_u='.$id_u;
 
         //pošljemo nove podatke v bazo
-        $que=mysqli_query($link, $query);
-        //echo "not ok";
-        if(!$que){
-            echo "not ok1";
-        }
+        mysqli_query($link, $query);
 }
 
 //preusmeritev nazaj na profile stran!
-//echo $target_file;
+echo $target_file;
 //header("Location: profile.php");
 ?>
