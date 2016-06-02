@@ -25,11 +25,6 @@ if (isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
-// Check if file already exists
-/*if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}*/
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
     //echo "Sorry, your file is too large.";
@@ -59,28 +54,29 @@ if ($uploadOk == 0) {
 }
 //če je $uploadOk = 0, pomeni, da ni bila naložena nobena slika
 //če je $uploadOk = 1 je bila naložena slika
-if ($uploadOk) {
+if ($uploadOk==1) {
     //pomeni uporabnik je naložil sliko
     $query = 'UPDATE users SET first_name="'.$first_name.'",
                                            last_name="'.$last_name.'",
                                            id_c='.$id_c.',
-                                           avatar="'.$target_file.'",
-                           WHERE id_u='.$id_u;
+                                           avatar="'.$target_file.'"
+                           WHERE (id_u='.$id_u.')';
 
         //pošljemo nove podatke v bazo
+
      mysqli_query($link, $query);
 }
 else {
     $query = 'UPDATE users SET first_name="'.$first_name.'",
-                                           last_name="'.$last_name.'",
-                                           id_c='.$id_c.'
-                           WHERE id_u='.$id_u;
+                                last_name="'.$last_name.'",
+                                id_c='.$id_c.'
+                           WHERE (id_u='.$id_u.')';
 
         //pošljemo nove podatke v bazo
         mysqli_query($link, $query);
 }
 
 //preusmeritev nazaj na profile stran!
-echo $target_file;
-//header("Location: profile.php");
+//echo $target_file;
+header("Location: profile.php");
 ?>

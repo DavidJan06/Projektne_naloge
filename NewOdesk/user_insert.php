@@ -19,8 +19,8 @@
         //geslo zakodiramo
         $pass = sha1($pass);
         
-        $query = 'INSERT INTO users(first_name,last_name,email,pass,id_c,active,admin) VALUES
-                          ("'.$first_name.'","'.$last_name.'","'.$email.'","'.$pass.'",'.$country_id.',0,0)';
+        $query = 'INSERT INTO users(first_name,last_name,email,pass,id_c,active,admin,score) VALUES
+                          ("'.$first_name.'","'.$last_name.'","'.$email.'","'.$pass.'",'.$country_id.',0,0,0)';
         
         //preverimo uspešnost
         if (!mysqli_query($link, $query)) {

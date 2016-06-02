@@ -22,6 +22,7 @@ Create table users (
 	active Int NOT NULL,
 	admin Int NOT NULL,
 	score Int,
+	count Int,
 	UNIQUE (email),
  Primary Key (id_u)) ENGINE = MyISAM;
 

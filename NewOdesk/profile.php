@@ -18,11 +18,11 @@
             $query = "SELECT * FROM countries";
             $result = mysqli_query($link, $query);
             while ($row = mysqli_fetch_array($result)) {
-                if ($row['id_u'] == $user['id_c']) {
-                    echo '<option value="'.$row['id_u'].'" selected="selected">'.$row['title'].'</option>';
+                if ($row['id_c'] == $user['id_c']) {
+                    echo '<option value="'.$row['id_c'].'" selected="selected">'.$row['title'].'</option>';
                 }
                 else {
-                    echo '<option value="'.$row['id_u'].'">'.$row['title'].'</option>';
+                    echo '<option value="'.$row['id_c'].'">'.$row['title'].'</option>';
                 }
             }
         ?>
@@ -58,7 +58,7 @@
         $skills = array();
         while($row = mysqli_fetch_array($result)) {
             //napolnim tabelo z veščinami, ki jih obvladam :)
-            $skills[] = $row['id_su'];
+            $skills[] = $row['id_s'];
         }    
         $query = "SELECT * FROM skills";
         $result = mysqli_query($link, $query);
