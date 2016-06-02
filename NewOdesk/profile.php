@@ -9,7 +9,7 @@
     $result = mysqli_query($link, $query);
     $user = mysqli_fetch_array($result);
 ?>
-
+<div class="main">
 <form action="profile_update.php" method="POST" enctype="multipart/form-data">
     Ime: <input type="text" name="first_name" value="<?php echo $user['first_name']; ?>" /><br />
     Priimek: <input type="text" name="last_name" value="<?php echo $user['last_name']; ?>" /><br />

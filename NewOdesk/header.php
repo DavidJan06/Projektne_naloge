@@ -7,13 +7,12 @@ session_start();
         <title>NewOdesk</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body id="">
-        <div id="">
-            <div id="">
-                <div id="">
+    <body>
+        <div id="body">
+            <div id="head">
+                <div id="button">
                     <ul>
-                        <?php if (!isset($_SESSION['id_u'])) {
-                             ?>
+                        <?php if (!isset($_SESSION['id_u'])) {?>
                             <li><a href="user_add.php"><span></span>Registracija</a></li>
                             <li><a href="login.php"><span></span>Prijava</a></li>
                         <?php
@@ -27,8 +26,8 @@ session_start();
                             <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?>
                             </a></li>
                         <?php } ?>
-                    </ul>    	
-                </div>
+                    </ul>  
+                </div>  	
             </div>
 
             <?php
