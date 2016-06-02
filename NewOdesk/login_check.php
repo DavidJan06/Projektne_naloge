@@ -12,10 +12,9 @@
     //zakodiramo password
     $pass = sha1($pass);
     
-    $query = sprintf("SELECT * FROM users 
-                      WHERE email = '%s' AND
-                      pass = '$pass'",
-             mysqli_real_escape_string($link, $email));
+    $query ="SELECT * FROM users 
+                      WHERE (email = '".$email."' AND
+                      pass = '".$pass."')";
     //pošljem podatke v bazo
     $result = mysqli_query($link, $query);
     
