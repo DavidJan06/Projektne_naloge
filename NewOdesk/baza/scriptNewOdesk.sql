@@ -17,7 +17,7 @@ Create table users (
 	last_name Varchar(200) NOT NULL,
 	email Varchar(200) NOT NULL,
 	pass Varchar(100) NOT NULL,
-	description Text,
+	description Varchar(500),
 	avatar Varchar(255),
 	active Int NOT NULL,
 	admin Int NOT NULL,
@@ -48,9 +48,9 @@ Create table projects (
 	id_p Serial NOT NULL AUTO_INCREMENT,
 	id_u Bigint UNSIGNED NOT NULL,
 	title Varchar(150) NOT NULL,
-	start_date Timestamp NOT NULL,
-	end_date Timestamp,
-	description Text,
+	start_date Date NOT NULL,
+	end_date Date,
+	description Varchar(500),
  Primary Key (id_p)) ENGINE = MyISAM;
 
 Create table projects_users (

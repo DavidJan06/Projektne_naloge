@@ -3,10 +3,10 @@
 include_once 'odesk_baza.php';
 session_start();
 
-$id_u = $_SESSION['id_u'];
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$id_c = $_POST['id_c'];
+$id_u = strip_tags($_SESSION['id_u'], 0,32));
+$first_name = strip_tags($_POST['first_name'], 0,32));
+$last_name = strip_tags($_POST['last_name'], 0,32));
+$id_c = strip_tags($_POST['id_c'], 0,32));
 
 $target_dir = "slike/";
 $random = date('Ymdhis').rand(1,1000);

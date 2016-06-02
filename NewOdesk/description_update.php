@@ -5,7 +5,7 @@
     $user_id = $_SESSION['id_u'];
     
    
-    $description = $_POST['description'];
+    $description =$_POST['description'];
     
     
     $query = 'UPDATE users SET description="'.$description.'"
