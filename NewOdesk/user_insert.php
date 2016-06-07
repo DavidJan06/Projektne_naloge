@@ -7,20 +7,20 @@
         isset($_POST["email"]) && isset($_POST['pass']) &&
         isset($_POST['pass2']) && isset($_POST['country_id'])) {
 
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $email = $_POST["email"];
-        $pass = $_POST['pass'];
-        $pass2 = $_POST['pass2'];
-        $country_id = (int) $_POST['country_id'];
+        $first_name = strip_tags($_POST['first_name'], 0,32));
+        $last_name = strip_tags($_POST['last_name'], 0,32));
+        $email = strip_tags($_POST["email"], 0,32));
+        $pass = strip_tags($_POST['pass'], 0,32));
+        $pass2 = strip_tags($_POST['pass2'], 0,32));
+        $country_id = strip_tags((int) $_POST['country_id'], 0,32));
 
         //geslo pripravimo za vnos
         $pass = $salt.$pass;
         //geslo zakodiramo
         $pass = sha1($pass);
         
-        $query = 'INSERT INTO users(first_name,last_name,email,pass,id_c,active,admin) VALUES
-                          ("'.$first_name.'","'.$last_name.'","'.$email.'","'.$pass.'",'.$country_id.',0,0)';
+        $query = 'INSERT INTO users(first_name,last_name,email,pass,id_c,active,admin,score) VALUES
+                          ("'.$first_name.'","'.$last_name.'","'.$email.'","'.$pass.'",'.$country_id.',0,0,0)';
         
         //preverimo uspešnost
         if (!mysqli_query($link, $query)) {

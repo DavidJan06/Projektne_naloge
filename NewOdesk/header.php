@@ -21,10 +21,10 @@ session_start();
                         <li><a href="index.php"><span></span>Domov</a></li>
                         <li><a href="countries.php"><span></span>Države</a></li>
                         <li><a href="skills.php"><span></span>Veščine</a></li>
-                        <li><a href="logout.php"><span></span>Odjava</a></li>
                         <li><a href="profile.php"><span></span>
                             <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?>
                             </a></li>
+                        <li><a href="logout.php"><span></span>Odjava</a></li>
                         <?php } ?>
                     </ul>  
                 </div>  	

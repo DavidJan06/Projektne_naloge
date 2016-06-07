@@ -4,8 +4,8 @@
     
     include_once 'odesk_baza.php';
     //sprejmemo podatke od login.php
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    $email = strip_tags(substr($_POST['email'], 0,32));
+    $pass = strip_tags(substr($_POST['pass'], 0,32));
     
     //posolimo password
     $pass = $salt.$pass;
