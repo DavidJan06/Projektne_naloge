@@ -47,7 +47,6 @@
 <br />
 <hr />
 <h2>Veščine</h2>
-<div class="center">
 <form action="skills_profile_update.php" method="POST">    
     <?php 
         //zapomnim si trenute veščine, ki jih ima
@@ -76,7 +75,6 @@
     ?>
     <input type="submit" value="Posodobi" />
 </form>
-</div>
 </div>
 <?php
 include_once 'footer.php';

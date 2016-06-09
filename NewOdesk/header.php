@@ -21,20 +21,42 @@ include_once 'odesk_baza.php';
             <div id="head">
                 <div id="button">
                     <ul>
-                        <?php if (!isset($_SESSION['id_u'])) {?>
+                        <?php 
+                        if (!isset($_SESSION['id_u'])) {?>
                             <li><a href="login.php"><span></span>Prijava</a></li>
                             <li><a href="user_add.php"><span></span>Registracija</a></li>
                         <?php
                         } 
                         else if (isset($_SESSION['id_u'])){?>
-                        <li><a href="projects.php"><span></span>Domov</a></li>
-                        <li><a href="employer.php"><span></span>Zaposleni</a></li>
-                        <li><a href="projects.php"><span></span>Projekti</a></li>
-                        <li><a href="profile.php"><span></span>
-                            <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?>
+                            <?php  
+                            $query = "SELECT * 
+                                        FROM users u
+                                        WHERE u.admin = 1";
+                            $result = mysqli_query($link, $query);
+        
+                            while ($row = mysqli_fetch_array($result))
+                            if ($_SESSION['id_u'] == $row['id_u']) {?>
+                            <li><a href="skills.php"><span></span>Veščine</a></li>
+                            <li><a href="countries.php"><span></span>Države</a></li>
+                            <li><a href="profile.php"><span></span>
+                                <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?>
                             </a></li>
-                        <li><a href="logout.php"><span></span>Odjava</a></li>
-                        <?php } ?>
+                            <li><a href="logout.php"><span></span>Odjava</a></li>
+
+                            <?php 
+                            } 
+                            else {?>
+
+                            <li><a href="projects.php"><span></span>Domov</a></li>
+                            <li><a href="profile.php"><span></span>
+                                <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?>
+                                </a></li>
+                            <li><a href="logout.php"><span></span>Odjava</a></li>
+
+                            <?php
+                            }?> 
+                        <?php
+                        } ?>
                     </ul>  
                 </div>  	
             </div>
