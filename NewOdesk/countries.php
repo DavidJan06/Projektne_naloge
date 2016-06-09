@@ -3,7 +3,7 @@
 ?>
 <div class="main">
 <a href="country_add.php">Dodaj državo</a>
-<table cellpading="0" cellspacing="0" border="1">
+<table class="center" cellpading="0" cellspacing="0" border="1">
     <tr>
         <th>Ime</th>
         <th>Kratica</th>

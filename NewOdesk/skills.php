@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 <div class="main">
 <a href="skill_add.php">Dodaj veščino</a>
-<table cellpading="0" cellspacing="0" border="1">
+<table class="center" cellpading="0" cellspacing="0" border="1">
     <tr>
         <th>Ime</th>
         <th>Opis</th>
