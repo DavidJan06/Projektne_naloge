@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 <div class="main">
     <h3> Izberite ponudbe </h3>
-    <table class="tabcenter" border="1">
+    <table class="center" border="1">
         <tr>
             <th> ID projekta </th>
             <th> Ime projekta </th>
