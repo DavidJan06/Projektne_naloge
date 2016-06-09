@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 09. jun 2016 ob 12.49
+-- Čas nastanka: 09. jun 2016 ob 13.26
 -- Različica strežnika: 10.0.17-MariaDB
 -- Različica PHP: 5.6.14
 
@@ -84,8 +84,7 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`id_s`, `title`, `description`) VALUES
-(1, 'PHP', NULL),
-(2, 'Javascript', NULL);
+(1, 'PHP', NULL);
 
 -- --------------------------------------------------------
 
@@ -98,14 +97,6 @@ CREATE TABLE `skills_users` (
   `id_u` bigint(20) UNSIGNED NOT NULL,
   `id_s` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=ucs2 COLLATE=ucs2_slovenian_ci;
-
---
--- Odloži podatke za tabelo `skills_users`
---
-
-INSERT INTO `skills_users` (`id_su`, `id_u`, `id_s`) VALUES
-(11, 1, 2),
-(10, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -132,9 +123,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_u`, `id_c`, `first_name`, `last_name`, `email`, `pass`, `description`, `avatar`, `active`, `admin`, `score`) VALUES
-(1, 1, 'David', 'Jan', 'David.Jan@gmail.com', '6f7f49e94ac380278a82a3f9e6991c33f0be8667', 'Suck a Dick', 'slike/cat.png', 0, 0, 0),
-(2, 1, 'Admin', 'Admin', 'Admin@Admin.Admin', 'e18f43f2f2f9b6ac6d8a19be0d56655a15f2f1fa', '', 'slike/admin.png', 0, 1, NULL),
-(3, 0, 'f', 'f', 'f@g.com', 'f037444b54eab9483ad4f4bb87815321f2e1768f', NULL, NULL, 0, 0, 0);
+(1, 1, 'Admin', 'Admin', 'Admin@Admin.Admin', 'e18f43f2f2f9b6ac6d8a19be0d56655a15f2f1fa', '', 'slike/admin.png', 0, 1, NULL);
 
 --
 -- Indeksi zavrženih tabel
@@ -212,17 +201,17 @@ ALTER TABLE `projects_users`
 -- AUTO_INCREMENT tabele `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `id_s` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_s` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT tabele `skills_users`
 --
 ALTER TABLE `skills_users`
-  MODIFY `id_su` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_su` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT tabele `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_u` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_u` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
