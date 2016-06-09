@@ -11,9 +11,14 @@ $priimekosebe=$_GET['last_name'];
 ?>
 
 <?php
-$sql="INSERT INTO active_projects (id_project, project_title, project_date_start, project_date_end, project_description, user_firstname, user_lastname)
-      VALUES ('$idprojekta', '$imeprojekta', '$zacetnidatum', '$koncnidatum', '$opisprojekta', '$imeosebe', '$priimekosebe')";
+$sql="UPDATE users
+      SET active='1'
+      WHERE active='0'";
 $query=mysqli_query($link, $sql);
 header("Location:employer.php");
+
+
+
+
 ?>
 

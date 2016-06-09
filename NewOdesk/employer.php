@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 <div class="main">
     <h3> Izberite ponudbe </h3>
-    <table border="1">
+    <table class="tabcenter" border="1">
         <tr>
             <th> ID projekta </th>
             <th> Ime projekta </th>
@@ -9,6 +9,7 @@
             <th> Konec </th>
             <th> Opis projekta </th>
             <th colspan="2"> Odgovorna oseba </th>
+            <th> <a href="project.php">Dodaj Projekt</a> </th>
         </tr>
         <?php
         $sql="SELECT p.id_p, p.title, p.start_date, p.end_date, p.description, u.first_name, u.last_name
@@ -26,7 +27,17 @@
             echo '<td>'.$row['description'].'</td>';
             echo '<td>'.$row['first_name'].'</td>';
             echo '<td>'.$row['last_name'].'</td>';
-            echo '<td> <a href="employer_choose.php"> Izberi </a></td>';
+            
+            
+            if ((isset($_SESSION['active']) == 0)&&(isset($_SESSION['active']) == NULL)){
+                echo '<td> <a href="employer_choose.php"> Izberi </a></td>';
+            }
+            
+            else {  
+                echo '<td>NONE</td>';
+                }
+
+            
             echo '</tr>';
         }
         ?>
@@ -34,7 +45,7 @@
         
         <hr>
     <h3> Aktivni projekti </h3>
-    <table border="1">
+    <table class="tabcenter" border="1">
         <tr>
             <th> ID projekta </th>
             <th> Ime projekta </th>
@@ -43,6 +54,7 @@
             <th> Opis projekta </th>
             <th colspan="2"> Odgovorna oseba </th>
             <th colspan="2"> Dejanje </th>
+            
         </tr>
         <?php
         $sql="SELECT ap.id_project, ap.project_title, ap.project_date_start, ap.project_date_end, ap.project_description, ap.user_firstname, ap.user_lastname

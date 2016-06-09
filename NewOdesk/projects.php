@@ -4,7 +4,7 @@ include_once 'header.php';
 <div class="main">
 <h1>Pregled projektov</h1>
 
-<table border="1" cellspacing="0" cellpadding="0">
+<table class="tabcenter" border="1" cellspacing="0" cellpadding="0">
     <tr>
         <th>ID projekta</th>
         <th>Naziv projekta</th>
