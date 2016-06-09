@@ -4,7 +4,7 @@
     $title = $_POST['title'];
     $short = $_POST['short'];    
     
-    $query = sprintf("INSERT INTO countries(title, short)
+    $query = "INSERT INTO countries(title, short)
               VALUES('".$title."', '".$short."')"; 
     
     //vnos podatkov v bazo
