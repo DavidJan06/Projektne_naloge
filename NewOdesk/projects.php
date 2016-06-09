@@ -1,8 +1,7 @@
 <?php
 include_once 'header.php';
-include_once 'database.php';
 ?>
-
+<div class="main">
 <h1>Pregled projektov</h1>
 
 <table border="1" cellspacing="0" cellpadding="0">
@@ -38,7 +37,7 @@ include_once 'database.php';
         }
     ?>
 </table>
-
+</div>
 <?php
 include_once 'footer.php';
 ?>

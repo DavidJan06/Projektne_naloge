@@ -1,7 +1,6 @@
  <?php
     include_once 'header.php';
-    include_once 'odesk_baza.php';
-    
+
     //shrani si id trenutno prijavljenega uporabnika
     $id_u = $_SESSION['id_u'];
     
@@ -77,6 +76,7 @@
     ?>
     <input type="submit" value="Posodobi" />
 </form>
+</div>
 </div>
 <?php
 include_once 'footer.php';

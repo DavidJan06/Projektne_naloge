@@ -9,7 +9,7 @@
     }
     //vse ok :)
     include_once 'header.php';
-    include_once 'database.php';
+    
     //dobim za katerega uporabika gre
         
     $query = "SELECT *, c.title AS country 

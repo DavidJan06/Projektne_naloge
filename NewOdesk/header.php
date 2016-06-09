@@ -1,11 +1,20 @@
 <?php
 session_start();
+include_once 'odesk_baza.php';
 ?>
-<!DOCTYPE html
+<!DOCTYPE html>
     <head>
         <meta charset= "utf-8"/>
         <title>NewOdesk</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
+            $(function() {
+            $( "#datepicker" ).datepicker();
+            });
+        </script>
     </head>
     <body>
         <div id="body">
@@ -13,14 +22,14 @@ session_start();
                 <div id="button">
                     <ul>
                         <?php if (!isset($_SESSION['id_u'])) {?>
-                            <li><a href="user_add.php"><span></span>Registracija</a></li>
                             <li><a href="login.php"><span></span>Prijava</a></li>
+                            <li><a href="user_add.php"><span></span>Registracija</a></li>
                         <?php
                         } 
                         else if (isset($_SESSION['id_u'])){?>
-                        <li><a href="index.php"><span></span>Domov</a></li>
-                        <li><a href="countries.php"><span></span>Države</a></li>
-                        <li><a href="skills.php"><span></span>Veščine</a></li>
+                        <li><a href="projects.php"><span></span>Domov</a></li>
+                        <li><a href="employer.php"><span></span>Zaposleni</a></li>
+                        <li><a href="projects.php"><span></span>Projekti</a></li>
                         <li><a href="profile.php"><span></span>
                             <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?>
                             </a></li>
