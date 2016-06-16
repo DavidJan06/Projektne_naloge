@@ -1,0 +1,23 @@
+- uporabnik se lahko prijavi na razpisano delo (in poda ponudbo) //dokonèano dodal odjavo!
+
+- delodajalec izbere izmed ponudjenih, kdo bo delal //dokonèano
+
+- ko je delo zakljuèeno delodajalec klikne zakljuèeno //dokonèano 
+
+- delodajalec lahko doda oceno uporabniku z zvezdicami (1 - 5) //dokonèano
+
+_____________________
+
+- admin uporabnik lahko dodaja poroèja, za katere ima uporabnike (programer, dizajner ...) //dokonèano
+
+- uporabnik lahko v profilu izbere, katera podroèja ga zanimajo (programiranje, dizajn ...) //dokonèano
+
+- V profilu uporabnika vidite njegovo povpreèno oceno in število narejenih nalog //dokonèano
+
+
+
+
+
+
+Vse pri nedokonèanem je potrebno vse naše dokaj narejene naloge zrdužiti v smiselno obliko da ze poveže.
+
